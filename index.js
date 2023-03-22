@@ -52,9 +52,11 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
    3. console.log(carpma(7,4)) ile yazdığın fonsiyonu test edin. Console'da sonucu 28 olarak görmelisin.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b) {
+  return(a*b);
 }
+console.log(carpma(7,4 ))
+
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -65,9 +67,12 @@ Aşağıdakileri yap:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+ function kopeginYasi(k) {
+  return (k*7)
+  }
+  console.log(kopeginYasi(5))
+
+  
 
 /* Görev 3 */
 /*
@@ -82,20 +87,31 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yap.
 
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
+ function bilgisayarinSecimi() {
+  let index=Math.random()
+  let secim;
+  if(index<=0.33){return "Makas"}
+  if(index>0.33&&index<=0.66){return "Kağıt"}
+  if(index>0.66&&index<=1.0){return "Taş"}
+  return secim;
+ }
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+if(oyuncu=="Makas"&&bilgisayar=="Makas"){return "Beraberlik"}
+if(oyuncu=="Makas"&&bilgisayar=="Kağıt"){return "Kazandın!"}
+if(oyuncu=="Makas"&&bilgisayar=="Taş"){return "Kaybettin!"}
 }
+console.log(oyun("Makas",bilgisayarinSecimi())
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
 Öncelikle aşağıdakileri yap:
-1. Bilgisayarın seçimini rastgele oluşturacağım bir fonksiyon tanımla. Örn: 
-   function bilgisayarinSecimi() {
-   
-   }
+1. Bilgisayarın seçimini rastgele oluşturacağım bir fonksiyon tanımla. Örn: */
+
+  /*
 2. Fonsiyonun içinde bilgisayarın seçimi için bir değişken tanımla
 3. Math.random'ı kullanarak bilgisayarın seçimini oluşturun (Math.random 0-1 arasında bir değer verecek)
+if
 4. Bu rastgele değeri "Taş", "Kağıt" veya "Makas"a dönüştüren bir koşul oluşturun
 5. Oluşan değeri geri dönün
 
@@ -107,15 +123,18 @@ function oyun(oyuncu, bilgisayar) {
 
 //Görev 4a - Kilometreden Mil
 /*
-Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
+Aşağdaki m fonksiyonunu aşağıdakileri kullanarak tamamla:
 1. Kilometre değerini argüman olarak alın.
 2. Aldığın bu değeri Mil'e dönüştürün
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function m(km) {
+return km*0.621371
+};
+console.log(m(10))
+
+
 
 //Görev 4b - Santimetreden Feet
 /*
@@ -127,9 +146,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yap:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function feetDonusturucu(cm) {
+  return cm/30.48
+};
+console.log(feetDonusturucu(160))
+
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
 
@@ -144,10 +165,11 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
-
+function cocukSarkisi(i) {
+  return(i+" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!")};
+  for(let i=5;i>0;i--)
+  console.log(cocukSarkisi(i))
+    
 /* Görev 6 : Not Hesaplayıcı */
 
 /*
@@ -163,10 +185,15 @@ Aşağdakileri notHesapla fonksiyonunda yap.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function notHesapla(not) {
+  
+  if(not>=90&&not<=100){return"A aldın"}
+  if(not>=80&&not<90){return"B aldın"}
+  if(not>=70&&not<80){return"C aldın"}
+  if(not>=60&&not<70){return"D aldın"}
+  if(not<60){return"F aldın"}
 }
-
+console.log(notHesapla(92))
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
 
 /*
@@ -194,7 +221,7 @@ module.exports = {
   carpma,
   kopeginYasi,
   oyun,
-  milDonusturucu,
+  m,
   feetDonusturucu,
   cocukSarkisi,
   notHesapla,
