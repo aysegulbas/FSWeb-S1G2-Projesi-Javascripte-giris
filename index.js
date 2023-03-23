@@ -100,8 +100,15 @@ function oyun(oyuncu, bilgisayar) {
 if(oyuncu=="Makas"&&bilgisayar=="Makas"){return "Beraberlik"}
 if(oyuncu=="Makas"&&bilgisayar=="Kağıt"){return "Kazandın!"}
 if(oyuncu=="Makas"&&bilgisayar=="Taş"){return "Kaybettin!"}
+if(oyuncu=="Taş"&&bilgisayar=="Taş"){return "Beraberlik"}
+if(oyuncu=="Taş"&&bilgisayar=="Makas"){return "Kazandın!"}
+if(oyuncu=="Taş"&&bilgisayar=="Kağıt"){return "Kaybettin!"}
+if(oyuncu=="Kağıt"&&bilgisayar=="Kağıt"){return "Beraberlik"}
+if(oyuncu=="Kağıt"&&bilgisayar=="Taş"){return "Kazandın!"}
+if(oyuncu=="Kağıt"&&bilgisayar=="Makas"){return "Kaybettin!"}
 }
-console.log(oyun("Makas",bilgisayarinSecimi())
+console.log(oyun("Makas",bilgisayarinSecimi()))
+
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -129,10 +136,10 @@ Aşağdaki m fonksiyonunu aşağıdakileri kullanarak tamamla:
 3. Mil değerini geri dönün
 */
 
-function m(km) {
+function milDonusturucu(km) {
 return km*0.621371
 };
-console.log(m(10))
+console.log(milDonusturucu(10))
 
 
 
@@ -221,7 +228,7 @@ module.exports = {
   carpma,
   kopeginYasi,
   oyun,
-  m,
+  milDonusturucu,
   feetDonusturucu,
   cocukSarkisi,
   notHesapla,
